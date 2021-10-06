@@ -1,0 +1,20 @@
+# permissions for end users to view gstconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: gstconfig-viewer-role
+rules:
+- apiGroups:
+  - clusterops.simp.nl
+  resources:
+  - gstconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - clusterops.simp.nl
+  resources:
+  - gstconfigs/status
+  verbs:
+  - get
